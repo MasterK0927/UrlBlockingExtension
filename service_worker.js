@@ -3,6 +3,20 @@ import { adultSiteRules } from "./blokedSites/adultSites.js";
 import { socialMediaRules } from "./blokedSites/socialMedia.js";
 import { illegalSiteRules } from "./blokedSites/illegalSites.js";
 
+chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+  // Assign the active tab to a variable
+  var activeTab = tabs[0];
+
+  // Add a message listener to handle messages
+  chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    if (message.action === 'openSidebar') {
+      // Use the windowId from the active tab
+      chrome.sidePanel.open({ windowId: activeTab.windowId });
+    }
+  });
+});
+
+
 export function injectServiceWorker(socialMediaChecked, adultChecked, illegalChecked) {
   const rulesToInject = [];
 

@@ -3,9 +3,21 @@
   "version": "0.1",
   "manifest_version": 3,
   "description": "Uses the chrome.declarativeNetRequest API to block requests.",
-  "permissions": ["declarativeNetRequest", "declarativeNetRequestFeedback", "sidePanel"],
+  "permissions": ["declarativeNetRequest", "declarativeNetRequestFeedback", "sidePanel", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
   "side_panel": {
     "default_path": "sidepanel.html",
+    "type": "module"
+  },
+  "background": {
+    "service_worker": "service_worker.js",
     "type": "module"
   }
 }
