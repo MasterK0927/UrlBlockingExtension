@@ -1,70 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Ping Kids Mode</title>
     <style type="text/css">
-        .title {
-            font-size: 35px;
-            font-weight: bold;
-            text-align: center;
-            color: greenyellow;
-        }
-        .urlBlockToggle {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .urlBlockToggle input {
-            display: none;
-        }
-        .urlBlockToggle label {
-            cursor: pointer;
-            padding: 10px 20px;
-            border: 1px solid red;
-            border-radius: 5px;
-        }
-        .urlBlockToggle input:checked + label {
-            background-color: #72d118;
-            color: #fff;
-            border-color: green
-        }
-        body{
-            background-color: #111010d2;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 70vh;
-            gap: 12px;
-        }
-        h2{
-            font-size: 20px;
-            color: greenyellow;
-        }
+      body {
+        background-color: #111010d2;
+        display: flex;
+        color: whitesmoke;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        gap: 20px;
+      }
+      h2 {
+        font-size: 20px;
+        color: greenyellow;
+      }
+      .titleContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .title {
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        color: greenyellow;
+      }
+      .blockingBoxRules {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        background-color: #333131;
+      }
+      input[type="checkbox"] {
+        display: none;
+      }
+      .socialMedia {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      .adultContent {
+        display: inline-block;
+        color: rgb(139, 135, 135);
+        vertical-align: middle;
+        position: relative;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      .illegalContent {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      .custom-checkbox {
+        width: 25px;
+        height: 25px;
+        background-color: #ccc;
+        border-radius: 5px;
+        position: relative;
+      }
+      .custom-checkbox::after {
+        content: "\2713";
+        font-size: 20px;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translate(-120%, -50%);
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
+      input[type="checkbox"]:checked + .custom-checkbox::after {
+        opacity: 1;
+      }
+      .toggleContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        align-items: center;
+      }
+      .labelToggle {
+        margin-left: 10px;
+        margin-top: 10px;
+        font-size: 20px;
+        color: greenyellow;
+      }
+      .urlBlockToggle {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+      }
+      .urlBlockToggle input[type="checkbox"] {
+        display: none;
+      }
+      .urlBlockToggle label {
+        cursor: pointer;
+        padding: 10px 20px;
+        border: 1px solid red;
+        border-radius: 25px;
+        background-color: #333131;
+        transition: background-color 0.3s ease;
+        position: relative;
+      }
+      .urlBlockToggle input[type="checkbox"]:checked + label {
+        background-color: #72d118;
+        border-color: green;
+      }
+      .urlBlockToggle input[type="checkbox"]:checked + label::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 3px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: transform 0.3s ease;
+        transform: translateX(22px);
+      }
+      .urlBlockToggle input[type="checkbox"]:not(:checked) + label::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: transform 0.3s ease;
+        transform: translateX(0);
+      }
+      #toggleOnText {
+        display: none;
+        color: gold;
+        font-size: 15px;
+        margin-top: 10px;
+      }
     </style>
-</head>
-<body>
-    <div>
-        <div class="title">Ping Kids Mode</div>
+  </head>
+  <body>
+    <div class="titleContainer">
+      <div class="title">Ping Kids Mode</div>
     </div>
-    <div id="urlBlockedBox" style="display: none; margin: 50px; background-color: #ff0000; color: #fff; padding: 10px; text-align: center; margin-top: 20px;"></div>
-    <h2>Checklists:</h2>
-    <label>
-        <input type="checkbox" id="socialMediaCheckbox"> Social Media
-    </label>
-    <br>
-    <label>
-        <input type="checkbox" id="adultCheckbox"> Adult Content
-    </label>
-    <br>
-    <label>
-        <input type="checkbox" id="illegalCheckbox"> Illegal Content
-    </label>
-    <div class="urlBlockToggle">
-        <input type="checkbox" id="urlBlockToggle" class="urlBlockToggle">
-        <label for="urlBlockToggle" class="urlBlockToggle">Block URL</label>
+    <div class="blockingBoxRules">
+      <div
+        id="urlBlockedBox"
+        style="
+          display: none;
+          margin: 50px;
+          background-color: #ff0000;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+          margin-top: 20px;
+        "
+      ></div>
+      <h2>Blocing Rules:</h2>
+      <label class="socialMedia">
+        <input type="checkbox" id="socialMediaCheckbox" />
+        <span class="custom-checkbox"></span>
+        Social Media
+      </label>
+      <br />
+      <label class="adultContent">
+        <input type="checkbox" id="adultCheckbox" checked disabled />
+        <span class="custom-checkbox"></span>
+        Adult Content
+      </label>
+      <br />
+      <label class="illegalContent">
+        <input type="checkbox" id="illegalCheckbox" />
+        <span class="custom-checkbox"></span>
+        Illegal Content
+      </label>
+      <div class="toggleContainer">
+        <div class="urlBlockToggle">
+          <input type="checkbox" id="urlBlockToggle" class="urlBlockToggle" />
+          <label for="urlBlockToggle" class="urlBlockToggle"></label>
+        </div>
+        <div class="labelToggle">Master Blocker</div>
+      </div>
+      <div id="toggleOnText"></div>
+      </div>
     </div>
+
     <script type="module" src="sidepanel.js"></script>
-</body>
+  </body>
 </html>

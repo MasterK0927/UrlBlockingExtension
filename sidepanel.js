@@ -4,6 +4,7 @@ const adultToggle = document.getElementById('adultCheckbox');
 const socialToggle = document.getElementById('socialMediaCheckbox');
 const illegalToggle = document.getElementById('illegalCheckbox');
 const urlBlockToggle = document.getElementById('urlBlockToggle');
+const toggleOnText = document.getElementById('toggleOnText');
 
 // Function to safely add event listener to an element if it exists else it will return an rerror
 function addEventListenerIfExist(element, event, handler) {
@@ -22,6 +23,7 @@ addEventListenerIfExist(adultToggle, 'change', function () {
   } else {
     console.log('Adult toggle unchecked');
     deinjectServiceWorker();
+    // window.location.reload(); //uncomment this option if wants to update all rules to null
   }
 });
 
@@ -32,6 +34,7 @@ addEventListenerIfExist(socialToggle, 'change', function () {
   } else {
     console.log('Social toggle unchecked');
     deinjectServiceWorker();
+    // window.location.reload();
   }
 });
 
@@ -42,6 +45,7 @@ addEventListenerIfExist(illegalToggle, 'change', function () {
   } else {
     console.log('Illegal toggle unchecked');
     deinjectServiceWorker();
+    // window.location.reload();
   }
 });
 
@@ -50,6 +54,8 @@ addEventListenerIfExist(urlBlockToggle, 'change', function () {
     console.log('Block URL toggle checked. Injecting service worker.');
     // Injecting the service worker script with all rules enabled
     injectServiceWorker(true, true, true);
+    toggleOnText.style.display = 'block';
+    toggleOnText.innerHTML = '*All rules enabled';
   } else {
     console.log('Block URL toggle unchecked. Removing service worker.');
     // Removing the service worker script

@@ -4,7 +4,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||indianporngirl.com",
+      "urlFilter": "/*indianporngirl*/",
       "resourceTypes": ["main_frame"]
     }
   },
@@ -13,7 +13,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||aggmaal.pro",
+      "urlFilter": "/*aggmaal*/",
       "resourceTypes": ["main_frame"]
     }
   },
@@ -22,7 +22,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||mmsbee.online",
+      "urlFilter": "/*mmsbee*/",
       "resourceTypes": ["main_frame"]
     }
   },
@@ -31,7 +31,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||desi52.club",
+      "urlFilter": "/*desi52*/",
       "resourceTypes": ["main_frame"]
     }
   },
@@ -40,7 +40,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||crazy18movies.com",
+      "urlFilter": "/*crazy18movies*/",
       "resourceTypes": ["main_frame"]
     }
   },
@@ -49,7 +49,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||crazy18movies.com",
+      "urlFilter": "/*xxx*/",
       "resourceTypes": ["main_frame"]
     }
   },
@@ -58,7 +58,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||ymlporn7.net",
+      "urlFilter": "/*ymlporn7*/",
       "resourceTypes": ["main_frame"]
     }
   },
@@ -67,7 +67,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||xxxindianporn2.com",
+      "urlFilter": "/*porn*/",
       "resourceTypes": ["main_frame"]
     }
   },
@@ -76,7 +76,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||xxxindianporn2.com",
+      "urlFilter": "/*xnxx*/",
       "resourceTypes": ["main_frame"]
     }
   },
@@ -85,7 +85,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||goindian2.com",
+      "urlFilter": "/*goindian2*/",
       "resourceTypes": ["main_frame"]
     }
   },
@@ -94,7 +94,7 @@ export const adultSiteRules = [
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||xxxindianporn2.com",
+      "urlFilter": "/*webmaal*/",
       "resourceTypes": ["main_frame"]
     }
   },

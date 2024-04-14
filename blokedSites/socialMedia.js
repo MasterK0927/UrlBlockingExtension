@@ -4,7 +4,7 @@ export const socialMediaRules = [
       priority: 1,
       action: { type: "block" },
       condition: {
-        urlFilter: "||facebook.com",
+        urlFilter: "||xyz.com",
         resourceTypes: ["main_frame"],
       },
     },
@@ -13,7 +13,7 @@ export const socialMediaRules = [
       priority: 1,
       action: { type: "block" },
       condition: {
-        urlFilter: "||twitter.com",
+        urlFilter: "||facebook.com",
         resourceTypes: ["main_frame"],
       },
     },
@@ -85,7 +85,7 @@ export const socialMediaRules = [
       priority: 1,
       action: { type: "block" },
       condition: {
-        urlFilter: "||whatsapp.com",
+        urlFilter: "||twitter.com",
         resourceTypes: ["main_frame"],
       },
     },
